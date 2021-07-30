@@ -51,29 +51,29 @@ const VisitorList = (props: ListProps): ReactElement => {
             filters={isSmall ? visitorFilters : undefined}
             sort={{ field: 'last_seen', order: 'DESC' }}
             perPage={25}
-            aside={<VisitorListAside />}
+            // aside={<VisitorListAside />}
         >
             {isXsmall ? (
                 <MobileGrid />
             ) : (
-                <Datagrid optimized rowClick="edit">
+                <Datagrid optimized rowClick="show">
                     <CustomerLinkField />
                     <DateField source="last_seen" />
-                    <NumberField
+                    {/* <NumberField
                         source="nb_commands"
                         label="resources.customers.fields.commands"
                         className={classes.nb_commands}
-                    />
-                    <ColoredNumberField
+                    /> */}
+                    {/* <ColoredNumberField
                         source="total_spent"
                         options={{ style: 'currency', currency: 'USD' }}
-                    />
-                    <DateField source="latest_purchase" showTime />
-                    <BooleanField source="has_newsletter" label="News." />
-                    <SegmentsField
+                    /> */}
+                    {/* <DateField source="latest_purchase" showTime /> */}
+                    {/* <BooleanField source="has_newsletter" label="News." /> */}
+                    {/* <SegmentsField
                         cellClassName={classes.hiddenOnSmallScreens}
                         headerClassName={classes.hiddenOnSmallScreens}
-                    />
+                    /> */}
                 </Datagrid>
             )}
         </List>

@@ -38,8 +38,8 @@ const Menu = ({ dense = false }: MenuProps) => {
     return (
         <div className={classes.root}>
             {' '}
-            <DashboardMenuItem />
-            <SubMenu
+            {/* <DashboardMenuItem /> */}
+            {/* <SubMenu
                 handleToggle={() => handleToggle('menuSales')}
                 isOpen={state.menuSales}
                 name="pos.menu.sales"
@@ -62,63 +62,63 @@ const Menu = ({ dense = false }: MenuProps) => {
                     leftIcon={<invoices.icon />}
                     dense={dense}
                 />
-            </SubMenu>
-            <SubMenu
+            </SubMenu>*/}
+            {/* <SubMenu
                 handleToggle={() => handleToggle('menuCatalog')}
                 isOpen={state.menuCatalog}
                 name="pos.menu.catalog"
                 icon={<products.icon />}
                 dense={dense}
-            >
-                <MenuItemLink
-                    to={`/products`}
-                    primaryText={translate(`resources.products.name`, {
-                        smart_count: 2,
-                    })}
-                    leftIcon={<products.icon />}
-                    dense={dense}
-                />
-                <MenuItemLink
+            > */}
+            {/* <MenuItemLink
+                to={`/products`}
+                primaryText={translate(`resources.products.name`, {
+                    smart_count: 2,
+                })}
+                leftIcon={<products.icon />}
+                dense={dense}
+            /> */}
+            {/* <MenuItemLink
                     to={`/categories`}
                     primaryText={translate(`resources.categories.name`, {
                         smart_count: 2,
                     })}
                     leftIcon={<categories.icon />}
                     dense={dense}
-                />
-            </SubMenu>
-            <SubMenu
+                /> */}
+            {/* </SubMenu> */}
+            {/* <SubMenu
                 handleToggle={() => handleToggle('menuCustomers')}
                 isOpen={state.menuCustomers}
                 name="pos.menu.customers"
                 icon={<visitors.icon />}
                 dense={dense}
-            >
-                <MenuItemLink
-                    to={`/customers`}
-                    primaryText={translate(`resources.customers.name`, {
-                        smart_count: 2,
-                    })}
-                    leftIcon={<visitors.icon />}
-                    dense={dense}
-                />
-                <MenuItemLink
+            > */}
+            <MenuItemLink
+                to={`/customers`}
+                primaryText={translate(`resources.customers.name`, {
+                    smart_count: 2,
+                })}
+                leftIcon={<visitors.icon />}
+                dense={dense}
+            />
+            {/* <MenuItemLink
                     to={`/segments`}
                     primaryText={translate(`resources.segments.name`, {
                         smart_count: 2,
                     })}
                     leftIcon={<LabelIcon />}
                     dense={dense}
-                />
-            </SubMenu>
-            <MenuItemLink
+                /> */}
+            {/* </SubMenu> */}
+            {/* <MenuItemLink
                 to={`/reviews`}
                 primaryText={translate(`resources.reviews.name`, {
                     smart_count: 2,
                 })}
                 leftIcon={<reviews.icon />}
                 dense={dense}
-            />
+            /> */}
         </div>
     );
 };
