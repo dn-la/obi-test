@@ -11,7 +11,6 @@ import {
     Record,
     RecordMap,
     Identifier,
-    ReferenceField,
     useLocale,
 } from 'react-admin';
 import {
@@ -31,7 +30,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import order from '../orders';
 import review from '../reviews';
-import StarRatingField from '../reviews/StarRatingField';
 import { Order as OrderRecord, Review as ReviewRecord } from '../types';
 
 const useAsideStyles = makeStyles(theme => ({

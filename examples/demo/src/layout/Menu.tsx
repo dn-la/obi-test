@@ -1,28 +1,16 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import LabelIcon from '@material-ui/icons/Label';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-    useTranslate,
-    DashboardMenuItem,
-    MenuItemLink,
-    MenuProps,
-} from 'react-admin';
+import { useTranslate, MenuItemLink, MenuProps } from 'react-admin';
 
 import visitors from '../visitors';
-import orders from '../orders';
-import invoices from '../invoices';
-import products from '../products';
-import categories from '../categories';
-import reviews from '../reviews';
-import SubMenu from './SubMenu';
 import { AppState } from '../types';
 
 type MenuName = 'menuCatalog' | 'menuSales' | 'menuCustomers';
 
 const Menu = ({ dense = false }: MenuProps) => {
-    const [state, setState] = useState({
+    const [, setState] = useState({
         menuCatalog: true,
         menuSales: true,
         menuCustomers: true,
@@ -30,10 +18,6 @@ const Menu = ({ dense = false }: MenuProps) => {
     const translate = useTranslate();
     useSelector((state: AppState) => state.theme); // force rerender on theme change
     const classes = useStyles();
-
-    const handleToggle = (menu: MenuName) => {
-        setState(state => ({ ...state, [menu]: !state[menu] }));
-    };
 
     return (
         <div className={classes.root}>

@@ -1,24 +1,19 @@
 import * as React from 'react';
 import {
-    BooleanField,
     Datagrid,
     DateField,
     DateInput,
     List,
     ListProps,
     NullableBooleanInput,
-    NumberField,
     SearchInput,
 } from 'react-admin';
 import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import SegmentsField from './SegmentsField';
 import SegmentInput from './SegmentInput';
 import CustomerLinkField from './CustomerLinkField';
-import ColoredNumberField from './ColoredNumberField';
 import MobileGrid from './MobileGrid';
-import VisitorListAside from './VisitorListAside';
 import { ReactElement } from 'react';
 
 const visitorFilters = [
