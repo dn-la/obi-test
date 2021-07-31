@@ -2,35 +2,22 @@ import * as React from 'react';
 import { FC } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-    NumberField,
-    TextField,
-    DateField,
-    useTranslate,
-    useGetList,
-    Record,
-    RecordMap,
-    Identifier,
-    useLocale,
-} from 'react-admin';
+import { DateField, useTranslate, Record, useLocale } from 'react-admin';
 import {
     Typography,
     Card,
     CardContent,
     Box,
-    Link,
     Stepper,
     Step,
     StepLabel,
     StepContent,
 } from '@material-ui/core';
-import { Link as RouterLink } from 'react-router-dom';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import { makeStyles } from '@material-ui/core/styles';
 
 import order from '../orders';
 import review from '../reviews';
-import { Order as OrderRecord, Review as ReviewRecord } from '../types';
 
 const useAsideStyles = makeStyles(theme => ({
     root: {

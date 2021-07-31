@@ -9,7 +9,7 @@ import {
     SearchInput,
 } from 'react-admin';
 import { useMediaQuery, Theme } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
 import SegmentInput from './SegmentInput';
 import CustomerLinkField from './CustomerLinkField';
@@ -24,15 +24,15 @@ const visitorFilters = [
     <SegmentInput />,
 ];
 
-const useStyles = makeStyles(theme => ({
-    nb_commands: { color: 'purple' },
-    hiddenOnSmallScreens: {
-        display: 'table-cell',
-        [theme.breakpoints.down('md')]: {
-            display: 'none',
-        },
-    },
-}));
+// const useStyles = makeStyles(theme => ({
+//     nb_commands: { color: 'purple' },
+//     hiddenOnSmallScreens: {
+//         display: 'table-cell',
+//         [theme.breakpoints.down('md')]: {
+//             display: 'none',
+//         },
+//     },
+// }));
 
 const VisitorList = (props: ListProps): ReactElement => {
     // const classes = useStyles();
