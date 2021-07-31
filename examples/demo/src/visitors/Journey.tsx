@@ -365,6 +365,9 @@ const Product: FC<any> = ({ record }) => {
 
 const CompareWrapper = styled.div`
     display: flex;
+    & .padding-15 {
+        padding: 15px;
+    }
 `;
 
 const Compare: FC<any> = ({ record }) => {
@@ -381,6 +384,7 @@ const Compare: FC<any> = ({ record }) => {
                         <div>$ {record.price1}</div>
                     </div>
                 </StyledProduct>
+                <div className="padding-15" />
                 <StyledProduct>
                     <img src={record.imageUrl2} alt="product" />
                     <div className="group">
