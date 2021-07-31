@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const VisitorList = (props: ListProps): ReactElement => {
-    const classes = useStyles();
+    // const classes = useStyles();
     const isXsmall = useMediaQuery<Theme>(theme =>
         theme.breakpoints.down('xs')
     );

@@ -74,19 +74,19 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
     const translate = useTranslate();
     const classes = useEventStyles();
     const locale = useLocale();
-    const { data: orders, ids: orderIds } = useGetList<OrderRecord>(
-        'commands',
-        { page: 1, perPage: 100 },
-        { field: 'date', order: 'DESC' },
-        { customer_id: record && record.id }
-    );
+    // const { data: orders, ids: orderIds } = useGetList<OrderRecord>(
+    //     'commands',
+    //     { page: 1, perPage: 100 },
+    //     { field: 'date', order: 'DESC' },
+    //     { customer_id: record && record.id }
+    // );
 
-    const { data: reviews, ids: reviewIds } = useGetList<ReviewRecord>(
-        'reviews',
-        { page: 1, perPage: 100 },
-        { field: 'date', order: 'DESC' },
-        { customer_id: record && record.id }
-    );
+    // const { data: reviews, ids: reviewIds } = useGetList<ReviewRecord>(
+    //     'reviews',
+    //     { page: 1, perPage: 100 },
+    //     { field: 'date', order: 'DESC' },
+    //     { customer_id: record && record.id }
+    // );
     // const events = mixOrdersAndReviews(orders, orderIds, reviews, reviewIds);
     const events = [
         {
@@ -265,83 +265,83 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
     );
 };
 
-interface AsideEvent {
-    type: string;
-    date: Date;
-    data: OrderRecord | ReviewRecord;
-}
+// interface AsideEvent {
+//     type: string;
+//     date: Date;
+//     data: OrderRecord | ReviewRecord;
+// }
 
-const mixOrdersAndReviews = (
-    orders?: RecordMap<OrderRecord>,
-    orderIds?: Identifier[],
-    reviews?: RecordMap<ReviewRecord>,
-    reviewIds?: Identifier[]
-): AsideEvent[] => {
-    const eventsFromOrders =
-        orderIds && orders
-            ? orderIds.map<AsideEvent>(id => ({
-                  type: 'order',
-                  date: orders[id].date,
-                  data: orders[id],
-              }))
-            : [];
-    const eventsFromReviews =
-        reviewIds && reviews
-            ? reviewIds.map<AsideEvent>(id => ({
-                  type: 'review',
-                  date: reviews[id].date,
-                  data: reviews[id],
-              }))
-            : [];
-    const events = eventsFromOrders.concat(eventsFromReviews);
-    events.sort(
-        (e1, e2) => new Date(e2.date).getTime() - new Date(e1.date).getTime()
-    );
-    return events;
-};
+// const mixOrdersAndReviews = (
+//     orders?: RecordMap<OrderRecord>,
+//     orderIds?: Identifier[],
+//     reviews?: RecordMap<ReviewRecord>,
+//     reviewIds?: Identifier[]
+// ): AsideEvent[] => {
+//     const eventsFromOrders =
+//         orderIds && orders
+//             ? orderIds.map<AsideEvent>(id => ({
+//                   type: 'order',
+//                   date: orders[id].date,
+//                   data: orders[id],
+//               }))
+//             : [];
+//     const eventsFromReviews =
+//         reviewIds && reviews
+//             ? reviewIds.map<AsideEvent>(id => ({
+//                   type: 'review',
+//                   date: reviews[id].date,
+//                   data: reviews[id],
+//               }))
+//             : [];
+//     const events = eventsFromOrders.concat(eventsFromReviews);
+//     events.sort(
+//         (e1, e2) => new Date(e2.date).getTime() - new Date(e1.date).getTime()
+//     );
+//     return events;
+// };
 
-interface OrderProps {
-    record?: OrderRecord;
-    basePath?: string;
-}
+// interface OrderProps {
+//     record?: OrderRecord;
+//     basePath?: string;
+// }
 
-const Order: FC<OrderProps> = ({ record, basePath }) => {
-    const translate = useTranslate();
-    return record ? (
-        <>
-            <Typography variant="body2" gutterBottom>
-                <Link to={`/commands/${record.id}`} component={RouterLink}>
-                    {translate('resources.commands.name', {
-                        smart_count: 1,
-                    })}{' '}
-                    #{record.reference}
-                </Link>
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-                {translate('resources.commands.nb_items', {
-                    smart_count: record.basket.length,
-                    _: '1 item |||| %{smart_count} items',
-                })}
-                &nbsp;-&nbsp;
-                <NumberField
-                    source="total"
-                    options={{
-                        style: 'currency',
-                        currency: 'USD',
-                    }}
-                    record={record}
-                    basePath={basePath}
-                />
-                &nbsp;-&nbsp;
-                <TextField
-                    source="status"
-                    record={record}
-                    basePath={basePath}
-                />
-            </Typography>
-        </>
-    ) : null;
-};
+// const Order: FC<OrderProps> = ({ record, basePath }) => {
+//     const translate = useTranslate();
+//     return record ? (
+//         <>
+//             <Typography variant="body2" gutterBottom>
+//                 <Link to={`/commands/${record.id}`} component={RouterLink}>
+//                     {translate('resources.commands.name', {
+//                         smart_count: 1,
+//                     })}{' '}
+//                     #{record.reference}
+//                 </Link>
+//             </Typography>
+//             <Typography variant="body2" color="textSecondary">
+//                 {translate('resources.commands.nb_items', {
+//                     smart_count: record.basket.length,
+//                     _: '1 item |||| %{smart_count} items',
+//                 })}
+//                 &nbsp;-&nbsp;
+//                 <NumberField
+//                     source="total"
+//                     options={{
+//                         style: 'currency',
+//                         currency: 'USD',
+//                     }}
+//                     record={record}
+//                     basePath={basePath}
+//                 />
+//                 &nbsp;-&nbsp;
+//                 <TextField
+//                     source="status"
+//                     record={record}
+//                     basePath={basePath}
+//                 />
+//             </Typography>
+//         </>
+//     ) : null;
+// };
 
 const StyledProduct = styled.div`
     display: flex;

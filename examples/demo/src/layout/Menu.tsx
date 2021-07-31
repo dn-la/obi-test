@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTranslate, MenuItemLink, MenuProps } from 'react-admin';
@@ -7,14 +7,12 @@ import { useTranslate, MenuItemLink, MenuProps } from 'react-admin';
 import visitors from '../visitors';
 import { AppState } from '../types';
 
-type MenuName = 'menuCatalog' | 'menuSales' | 'menuCustomers';
-
 const Menu = ({ dense = false }: MenuProps) => {
-    const [, setState] = useState({
-        menuCatalog: true,
-        menuSales: true,
-        menuCustomers: true,
-    });
+    // const [, setState] = useState({
+    //     menuCatalog: true,
+    //     menuSales: true,
+    //     menuCustomers: true,
+    // });
     const translate = useTranslate();
     useSelector((state: AppState) => state.theme); // force rerender on theme change
     const classes = useStyles();
