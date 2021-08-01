@@ -11,9 +11,11 @@ import {
   UpdateParams,
 } from 'react-admin';
 import customerDataProvider from '@/dataProvider/customer'
+import journeyDataProvider from '@/dataProvider/journey'
 
 const dataProviders = [
   { resource: 'customers', dataProvider: customerDataProvider },
+  { resource: 'journeys', dataProvider: journeyDataProvider },
 ];
 
 function mappingDataProvider(resource, method, params) {
