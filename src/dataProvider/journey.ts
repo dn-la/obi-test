@@ -43,7 +43,8 @@ const journeys: Partial<DataProvider> = {
             'X-Parse-Application-Id': 'obi-parse'
             },
             params: {
-                where: `{"customer":{"__type":"Pointer","className":"Customer","objectId":"${params.id}"}}`
+                where: `{"customer":{"__type":"Pointer","className":"Customer","objectId":"${params.id}"}}`,
+                order: "-createdAt"
             }
         }).then((result) => {
             // console.log(result)
