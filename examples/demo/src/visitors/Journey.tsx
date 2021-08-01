@@ -115,7 +115,7 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
             type: 'message',
             data: {
                 id: 4,
-                message: 'Stay at Wine Zone for 10 minutes',
+                message: 'Stay at Coffee Zone for 10 minutes',
             },
             date: '2021/7/31 18:35',
         },
