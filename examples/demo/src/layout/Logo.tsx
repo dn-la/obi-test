@@ -14,7 +14,7 @@ const StyledText = styled.div`
 const Logo = (props: SVGProps<SVGSVGElement>) => {
     return (
         <StyledText>
-            OBI <span>Shop</span>
+            OBI <span>Market</span>
         </StyledText>
     );
 };
