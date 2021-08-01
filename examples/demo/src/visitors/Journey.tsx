@@ -89,10 +89,10 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
             data: {
                 id: 2,
                 imageUrl:
-                    'https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_644,h_436,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/lu8s0nc1nrdpsdsx8swd/%E6%97%A5%E6%9C%AC%E9%9B%B6%E9%A3%9F%E9%A9%9A%E5%96%9C%E7%B3%BB%E5%88%97-KLOOKxWOWBOX%E8%81%AF%E5%90%8D%E5%90%88%E4%BD%9C.jpg',
+                    'https://www.costco.com.tw/medias/sys_master/images/hd6/h61/66478959296542.jpg',
                 name:
-                    'Starbucks Veranda Blend Golden Roasted Mixed Coffee Beans 1.13kg',
-                price: '1,234',
+                    'Kirkland Signature Kirkland Organic Ethiopian coffee beans',
+                price: '549',
             },
             date: '2021/7/31 18:13',
         },
@@ -101,14 +101,13 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
             data: {
                 id: 3,
                 imageUrl1:
-                    'https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_644,h_436,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/lu8s0nc1nrdpsdsx8swd/%E6%97%A5%E6%9C%AC%E9%9B%B6%E9%A3%9F%E9%A9%9A%E5%96%9C%E7%B3%BB%E5%88%97-KLOOKxWOWBOX%E8%81%AF%E5%90%8D%E5%90%88%E4%BD%9C.jpg',
-                name1:
-                    'Starbucks Veranda Blend Golden Roasted Mixed Coffee Beans 1.13kg',
-                price1: '1,234',
+                    'https://www.costco.com.tw/medias/sys_master/images/h8e/h0e/46337917222942.jpg',
+                name1: 'Starbucks Pike Place Roast Whole Bean Coffee',
+                price1: '649',
                 imageUrl2:
-                    'https://cdn01.pinkoi.com/product/F6Y5Dthy/0/1/800x0.jpg',
-                name2: 'Kirkland Signature Kirkland Columbia Follicular Coffee',
-                price2: '4,567',
+                    'https://www.costco.com.tw/medias/sys_master/images/hbb/h89/64390633390110.jpg',
+                name2: 'Kirkland Signature Espresso Bean',
+                price2: '419',
             },
             date: '2021/7/31 18:25',
         },

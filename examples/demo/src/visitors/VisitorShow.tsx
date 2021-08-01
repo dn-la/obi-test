@@ -55,8 +55,20 @@ const VisitorForm = (props: any) => {
                                     </Box> */}
                             </Box>
                             <Box mt="1em" />
-                            <Typography gutterBottom>Email</Typography>
-                            <TextField source="email" resource="customers" />
+                            <Typography gutterBottom>Gender</Typography>
+                            <Typography gutterBottom variant="body2">
+                                Female
+                            </Typography>
+                            <Box mt="1em" />
+                            <Typography gutterBottom>Member ID</Typography>
+                            <Typography gutterBottom variant="body2">
+                                13048
+                            </Typography>
+                            <Box mt="1em" />
+                            <Typography gutterBottom>Phone</Typography>
+                            <Typography gutterBottom variant="body2">
+                                0976543219
+                            </Typography>
                         </Box>
                     </Box>
                 </CardContent>
