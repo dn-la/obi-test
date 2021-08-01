@@ -101,7 +101,6 @@ const journeys: Partial<DataProvider> = {
                 }
             })
 
-
             return {
                 total: data.length,
                 data,
