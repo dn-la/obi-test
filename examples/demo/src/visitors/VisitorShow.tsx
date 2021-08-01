@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { FC } from 'react';
-import {
-    ShowProps,
-    useTranslate,
-    FieldProps,
-    TextField,
-    Show,
-} from 'react-admin';
+import { ShowProps, useTranslate, FieldProps, Show } from 'react-admin';
 import { Box, Card, CardContent, Typography } from '@material-ui/core';
 
 import Journey from './Journey';
