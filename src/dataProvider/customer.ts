@@ -65,7 +65,7 @@ const customers: Partial<DataProvider> = {
           ...journey
         }
       })
-      console.log({id: params.id, ...user.data.results[0], journey: typedJourney})
+      // console.log({id: params.id, ...user.data.results[0], journey: typedJourney})
       return {
         data: {id: params.id, ...user.data.results[0], journey: typedJourney},
       };

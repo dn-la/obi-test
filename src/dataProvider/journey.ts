@@ -73,9 +73,7 @@ const journeys: Partial<DataProvider> = {
                 }
             })
 
-            console.log({
-                data,
-            })
+           
 
             return {
                 data,
@@ -103,10 +101,6 @@ const journeys: Partial<DataProvider> = {
                 }
             })
 
-            console.log({
-                total: data.length,
-                data,
-            })
 
             return {
                 total: data.length,

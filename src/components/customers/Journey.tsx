@@ -133,7 +133,7 @@ const EventList: FC<EventListProps> = ({ record, basePath }) => {
 
    
 
-    console.log(events);
+    // console.log(events);
     const renderSwitch = (event: any) => {
         
         switch (event.type) {
