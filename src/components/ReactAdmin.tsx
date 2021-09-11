@@ -9,7 +9,7 @@ const ReactAdmin: FunctionComponent = () => {
 
   return (
     <Admin dataProvider={dataProvider} layout={Layout}>
-      <Resource name="customers" list={CustomerList} edit={EditGuesser}/>
+      <Resource name="customers" list={CustomerList} edit={CustomerEdit}/>
     </Admin>
   );
 };
