@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
   DataProvider,
-  // GetOneParams,
+  GetOneParams,
 } from 'react-admin';
 
 
@@ -29,49 +29,49 @@ const customers: Partial<DataProvider> = {
       };
     });
   },
-  // getOne: (resource: string, params: GetOneParams) => {
-  //   const getUser = axios({
-  //     url: 'https://obi-parse.home.hpd.io/parse/classes/Customer',
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-  //       accept: 'application/x-www-form-urlencoded;charset=utf-8',
-  //       'X-Parse-Application-Id': 'obi-parse'
-  //     },
-  //     params: {
-  //       where: `{"objectId": "${params.id}"}`
-  //     }
-  //   })
-  //   const getUserJourney = axios({
-  //     url: 'https://obi-parse.home.hpd.io/parse/classes/CustomerEvent',
-  //     method: 'GET',
-  //     headers: {
-  //     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-  //     accept: 'application/x-www-form-urlencoded;charset=utf-8',
-  //     'X-Parse-Application-Id': 'obi-parse'
-  //     },
-  //     params: {
-  //         where: `{"customer":{"__type":"Pointer","className":"Customer","objectId":"${params.id}"}}`,
-  //         order: "-createdAt"
-  //     }
-  // })
-  //   return Promise.all([getUser,getUserJourney]).then((result) => {
-  //     const[user, journeys] = result;
-  //     const typedJourney = journeys.data.results.map((journey)=>{
-  //       let type = 'message';
-  //       if (journey.name === 'productPage_view_product') type = 'product'
-  //       if (journey.name.includes('scanToCompare')) type = 'compare'
-  //       return{
-  //         type,
-  //         ...journey
-  //       }
-  //     })
-  //     // console.log({id: params.id, ...user.data.results[0], journey: typedJourney})
-  //     return {
-  //       data: {id: params.id, ...user.data.results[0], journey: typedJourney},
-  //     };
-  //   });
-  // },
+  getOne: (resource: string, params: GetOneParams) => {
+    const getUser = axios({
+      url: 'https://obi-parse.home.hpd.io/parse/classes/Customer',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+        accept: 'application/x-www-form-urlencoded;charset=utf-8',
+        'X-Parse-Application-Id': 'obi-parse'
+      },
+      params: {
+        where: `{"objectId": "${params.id}"}`
+      }
+    })
+    const getUserJourney = axios({
+      url: 'https://obi-parse.home.hpd.io/parse/classes/CustomerEvent',
+      method: 'GET',
+      headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      accept: 'application/x-www-form-urlencoded;charset=utf-8',
+      'X-Parse-Application-Id': 'obi-parse'
+      },
+      params: {
+          where: `{"customer":{"__type":"Pointer","className":"Customer","objectId":"${params.id}"}}`,
+          order: "-createdAt"
+      }
+  })
+    return Promise.all([getUser,getUserJourney]).then((result) => {
+      const[user, journeys] = result;
+      const typedJourney = journeys.data.results.map((journey)=>{
+        let type = 'message';
+        if (journey.name === 'productPage_view_product') type = 'product'
+        if (journey.name.includes('scanToCompare')) type = 'compare'
+        return{
+          type,
+          ...journey
+        }
+      })
+      // console.log({id: params.id, ...user.data.results[0], journey: typedJourney})
+      return {
+        data: {id: params.id, ...user.data.results[0], journey: typedJourney},
+      };
+    });
+  },
  
 };
 
