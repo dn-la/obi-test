@@ -8,7 +8,7 @@ const ReactAdmin: FunctionComponent = () => {
 
   return (
     <Admin dataProvider={dataProvider} layout={Layout}>
-      {/* <Resource name="customers"/> */}
+      <Resource name="customers"/>
     </Admin>
   );
 };
